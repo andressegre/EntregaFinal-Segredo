@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Préstamos</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Agrega la referencia a SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>Simulador de Préstamos</h1>
+        <label for="monto">Monto solicitado:</label>
+        <input v-model="monto" type="number" id="monto" placeholder="Ingrese el monto">
+
+        <label for="tasa">Tasa de interés (%):</label>
+        <input v-model="tasa" type="number" id="tasa" placeholder="Ingrese la tasa de interés">
+
+        <label for="plazo">Plazo de pago (meses):</label>
+        <input v-model="plazo" type="number" id="plazo" placeholder="Ingrese el plazo en meses">
+
+        <button @click="calcularPrestamo()">Calcular</button>
+
+        <div id="resultado">
+            <p>Cuota Mensual: {{ cuotaMensual.toFixed(2) }}</p>
+            <p>Total a Pagar: {{ totalPrestamo.toFixed(2) }}</p>
+        </div>
+
+        <div id="widget-dolar">
+            Valor del Dólar: {{ dolar.toFixed(2) }} Pesos Uruguayos
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
